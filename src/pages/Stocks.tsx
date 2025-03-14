@@ -30,7 +30,8 @@ import {
   YAxis, 
   CartesianGrid, 
   Tooltip, 
-  ResponsiveContainer 
+  ResponsiveContainer,
+  Cell 
 } from 'recharts';
 
 // Mock data for sector performance
@@ -119,10 +120,17 @@ const Stocks = () => {
                         />
                         <Bar 
                           dataKey="performance" 
-                          fill={(data) => data.performance >= 0 ? '#22c55e' : '#ef4444'}
+                          fill="#22c55e" 
                           radius={[4, 4, 4, 4]}
                           barSize={16}
-                        />
+                        >
+                          {sectorData.map((entry, index) => (
+                            <Cell 
+                              key={`cell-${index}`} 
+                              fill={entry.performance >= 0 ? '#22c55e' : '#ef4444'} 
+                            />
+                          ))}
+                        </Bar>
                       </BarChart>
                     </ResponsiveContainer>
                   </div>
