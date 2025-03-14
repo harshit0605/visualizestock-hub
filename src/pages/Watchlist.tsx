@@ -4,8 +4,8 @@ import Navbar from '@/components/layout/Navbar';
 import Sidebar from '@/components/layout/Sidebar';
 import { 
   ArrowDown, 
-  ArrowUp, A
-  lertCircle, 
+  ArrowUp, 
+  AlertCircle, 
   BarChart4, 
   Bell, 
   Eye, 
